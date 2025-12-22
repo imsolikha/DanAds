@@ -1,3 +1,5 @@
+//control HTTP status codes
+
 export class ApiError extends Error {
   statusCode: number;
 

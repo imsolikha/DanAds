@@ -1,3 +1,5 @@
+//MAIN ENTRY POINT
+
 import express from 'express';
 import { ApiError } from './errors';
 import { asyncHandler } from './asyncHandler';
@@ -14,6 +16,7 @@ interface Note {
   content: string;
 }
 
+//CRUD METHODS
 
 app.get('/notes/:id', (req, res) => {
   const id = Number(req.params.id);
@@ -30,22 +33,7 @@ app.get('/notes/:id', (req, res) => {
 });
 
 
-// app.get('/notes', (req, res) => {
-//   const page = Number(req.query.page) || 1;
-//   const limit = Number(req.query.limit) || 5;
-//
-//   const start = (page - 1) * limit;
-//   const end = start + limit;
-//
-//   const paginatedNotes = notes.slice(start, end);
-//
-//   res.json({
-//     page,
-//     limit,
-//     total: notes.length,
-//     data: paginatedNotes,
-//   });
-// });
+
 
 
 app.get('/notes', (req, res) => {
@@ -77,7 +65,7 @@ app.get('/notes', (req, res) => {
 
 
 
-
+//REQUEST VALIDATION
 app.post('/notes', (req, res) => {
   const { title, content } = req.body;
 
@@ -99,7 +87,7 @@ app.post('/notes', (req, res) => {
 });
 
 
-
+//CENTRALIZED ERRORS
 app.put(
   '/notes/:id',
   asyncHandler(async (req, res) => {
@@ -114,24 +102,6 @@ app.put(
   })
 );
 
-
-// app.put('/notes/:id', (req, res) => {
-//   const id = Number(req.params.id);
-//   const note = notes.find(n => n.id === id);
-//     if (!note) {
-//       throw new ApiError(404, 'Note not found');
-//     }
-//   if (!note) {
-//     return res.status(404).json({ error: 'Note not found' });
-//   }
-//
-//   const { title, content } = req.body;
-//
-//   if (title !== undefined) note.title = title;
-//   if (content !== undefined) note.content = content;
-//
-//   res.json(note);
-// });
 
 
 
@@ -159,7 +129,7 @@ const notes: Note[] = [
 
 
 app.get('/', (req, res) => {
-  res.json({ message: 'API is running 🚀' });
+  res.json({ message: 'API is running yeahh!' });
 });
 
 app.listen(PORT, () => {
