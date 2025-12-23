@@ -132,21 +132,22 @@ Improved logging and monitoring
 
 ---
 
+## 📂 Project Structure
+
 src/
 
-├── index.ts # Main application entry point
+├── index.ts **Main application entry point**
 
-├── errors.ts # Custom ApiError class
+├── errors.ts **Custom ApiError class**
 
-├── errorMiddleware.ts #Centralized error-handling middleware
+├── errorMiddleware.ts **Centralized error-handling middleware**
 
-└── asyncHandler.ts #Async error-handling wrapper
+└── asyncHandler.ts **Async error-handling wrapper**
 
 
 ---
 
 
-## 📂 Project Structure
 
 ## ⚙️ Installation & Setup
 
